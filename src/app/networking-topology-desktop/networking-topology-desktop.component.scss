@@ -1,0 +1,208 @@
+// Height variables
+$minHeight: 400px;
+
+// Color variables
+$borderColor: rgb(127,203,221);
+$backgroundColor: rgb(255,255,255);
+$captionColor: rgb(49,49,49);
+$groupColor: rgb(245, 245, 245);
+
+.height-enforce {
+  min-height: $minHeight;
+}
+
+.caption {
+  color: $captionColor;
+  font-weight: bold;
+  align-items: center;
+}
+
+.detail-item {
+  margin-top: 4px;
+}
+
+.network-icon{
+  align-self: center;
+}
+
+$small-card-height: 105px;
+.small-box {
+  width: 85px;
+  height: $small-card-height;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.big-box {
+  overflow-y: auto;
+}
+
+.border-box {
+  border: 2px solid $borderColor;
+  background: $backgroundColor;
+
+  ::ng-deep {
+    svg {
+      path {
+        fill: #7f7f7f;
+      }
+    }
+  }
+}
+
+:host {
+
+  /* */
+  overflow-y: scroll;
+  height: 500px;
+  display: block;
+  /* */
+
+  .setup-card {
+    flex: 0 0 300px;
+    margin-right: 40px;
+    margin-left: 40px
+  }
+
+  .topology-container{
+    display: flex;
+  }
+
+  .left-column {
+
+    @extend .height-enforce;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: $small-card-height;
+
+    .network-icon-card {
+      @extend .border-box, .small-box;
+    }
+
+    .network-caption {
+      @extend .caption;
+    }
+
+
+  }
+
+  .middle-column {
+
+    @extend .height-enforce;
+    display: flex;
+    flex: 1;
+    border: 1px dotted;
+    background-color: $groupColor;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .management-gateway {
+      @extend .border-box, .big-box;
+      margin: 40px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: row;
+
+      .management-gateway-details {
+        flex: 2;
+        margin-left: 10px;
+        .mg-detail-item {
+          @extend .detail-item;
+        }
+      }
+
+      .management-gateway-icon {
+        flex: 1;
+        margin-top: 10%;
+        margin-right: 20px;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+
+    .compute-gateway {
+      @extend .border-box, .big-box;
+      margin: 40px 40px -50px 40px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: row;
+
+      .compute-gateway-details {
+        flex: 2;
+        margin-left: 10px;
+        .cg-detail-item {
+          @extend .detail-item;
+          margin-top: 40px;
+        }
+
+      }
+
+      .compute-gateway-icon {
+        flex: 1;
+        margin-top: 10%;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+    }
+
+    .layout-helper {
+      flex:1
+    }
+
+    .vpc-connect-anchor {
+      flex:0 0 98px;
+    }
+
+    .compute-gateway-anchor {
+      flex:0 0 10px;
+    }
+  }
+
+  .right-column {
+
+    @extend .height-enforce;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    .onprem-icon-card {
+      @extend .border-box, .small-box;
+      align-self: center;
+    }
+
+    .vpc-icon-card {
+      @extend .border-box, .small-box;
+      flex: 0 0 105px;
+    }
+
+    .onprem-caption {
+      @extend .caption;
+    }
+
+    .onprem-caption-vpc {
+      @extend .caption;
+      margin-left: 20%; /* For centering the VPC text*/
+    }
+
+    .onprem-card-layout{
+      display: flex;
+      justify-content: center;
+      flex:1
+    }
+
+  }
+
+}
+
+

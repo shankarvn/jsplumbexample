@@ -1,0 +1,75 @@
+<div id="overview-topology-container">
+
+  <h4>Topology</h4>
+
+  <div id="topology-container" class="row topology-container">
+
+    <div class="left-column">
+      <div id="network-icon-card" class="network-icon-card">
+        <clr-icon shape="network-globe" size="45" class="network-icon"></clr-icon>
+        <div class="network-caption">Net9000</div>
+      </div>
+    </div>
+
+    <div id="middle-column" class="middle-column">
+      <div id="management-gateway" class="management-gateway">
+        <div class="management-gateway-details">
+          <h5 class="bold">Net1</h5>
+          <div class="mg-detail-item">Net2</div>
+          <div class="mg-detail-item">Net3</div>
+          <div class="mg-detail-item">Net4</div>
+        </div>
+
+        <div class="management-gateway-icon">
+          <clr-icon shape="vcenter" size="45"></clr-icon>
+          <a href="javascript:void(0)" style="margin-left: 25%">Net5</a>
+        </div>
+      </div>
+
+      <div class="layout-helper"></div>
+
+      <div class="compute-gateway">
+        <div id="compute-gateway" class="compute-gateway-anchor"></div>
+        <div class="compute-gateway-details" >
+          <h5 class="bold">Net6 </h5>
+          <div class="cg-detail-item">Net7</div>
+          <div class="cg-detail-item">
+
+          </div>
+        </div>
+        <div class="compute-gateway-icon">
+          <clr-icon shape="data-cluster" size="70"></clr-icon>
+        </div>
+        <div id="compute-gateway-right" class="compute-gateway-anchor"></div>
+      </div>
+
+      <div id="vpc-anchor" class="vpc-connect-anchor"></div>
+    </div>
+
+
+    <div class="right-column">
+      <ng-container>
+
+        <div class="onprem-card-layout">
+          <div id="onprem-icon-card" class="onprem-icon-card">
+            <clr-icon shape="building" size="45" class="network-icon"></clr-icon>
+            <div class="onprem-caption">NetInCampus</div>
+          </div>
+        </div>
+
+
+        <div id="vpc-icon-card" class="vpc-icon-card">
+          <clr-icon shape="cloud-scale" size="45" class="network-icon"></clr-icon>
+          <div class="onprem-caption">Cloud</div>
+          <div class="onprem-caption-vpc">Connector</div>
+        </div>
+      </ng-container>
+
+
+
+    </div>
+
+  </div>
+</div>
+
+
